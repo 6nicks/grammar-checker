@@ -1,0 +1,13 @@
+{
+  "name": "grammar-checker",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter @grammar-checker/web dev",
+    "build": "pnpm --filter @grammar-checker/web build",
+    "start": "pnpm --filter @grammar-checker/web start"
+  },
+  "keywords": ["nextjs", "grammar-checker", "monorepo"],
+  "author": "",
+  "license": "MIT"
+}
