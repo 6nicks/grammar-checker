@@ -128,7 +128,7 @@ export default function ArticlePage() {
 
           <section className="article-footer">
             <p>2026.03.28</p>
-            <p><a href="https://github.com/6nicks/mm-demo" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+            <p><a href="https://github.com/6nicks/grammar-checker" target="_blank" rel="noopener noreferrer">GitHub</a></p>
           </section>
         </article>
       </main>

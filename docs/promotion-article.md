@@ -281,7 +281,7 @@ curl http://localhost:3001
 
 **在线体验**: http://120.79.225.117:3001
 
-**GitHub**: https://github.com/6nicks/mm-demo
+**GitHub**: https://github.com/6nicks/grammar-checker
 
 ---
 
