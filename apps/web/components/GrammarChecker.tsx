@@ -17,6 +17,7 @@ interface GrammarResult {
 }
 
 type Lang = 'zh' | 'en'
+type Theme = 'dark' | 'light'
 
 const texts = {
   zh: {
@@ -58,9 +59,14 @@ export default function GrammarChecker() {
   const [result, setResult] = useState<GrammarResult | null>(null)
   const [loading, setLoading] = useState(false)
   const [lang, setLang] = useState<Lang>('zh')
+  const [theme, setTheme] = useState<Theme>('dark')
   const resultRef = useRef<HTMLDivElement>(null)
 
   const t = texts[lang]
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+  }, [theme])
 
   const checkGrammar = async () => {
     if (!text.trim()) return
@@ -157,7 +163,7 @@ export default function GrammarChecker() {
   }
 
   return (
-    <div className="page-container">
+    <div className="page-container" data-theme={theme}>
       <div className="animated-grid">
         <div className="grid-layer" />
       </div>
@@ -173,6 +179,13 @@ export default function GrammarChecker() {
           </a>
           <div className="nav-links">
             <a href="/article" className="nav-link">{t.story}</a>
+            <button 
+              className="theme-toggle" 
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              title={theme === 'dark' ? '切换浅色' : 'Switch to dark'}
+            >
+              {theme === 'dark' ? '☀️' : '🌙'}
+            </button>
             <div className="lang-switch">
               <button 
                 className={lang === 'zh' ? 'active' : ''} 
